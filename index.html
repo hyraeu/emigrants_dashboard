@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Registered Filipino Emigrants, 2001–2022</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <p class="course">ITC C503 - 301I · Dashboard Analysis </p>
+  <h1>Where do registered Filipino emigrants go?</h1>
+  <p class="sub">Number of registered Filipino emigrants by major country of destination, 2001 to 2022. Source: PSA OpenSTAT</p>
+</header>
+
+<div class="picker">
+  <label for="yr">Selected year</label>
+  <input type="range" id="yr" min="0" max="21" value="21">
+  <output id="yrOut">2022</output>
+</div>
+
+<main>
+  <section class="kpis" id="kpis"></section>
+
+  <section class="card wide">
+    <h2>Annual total of registered emigrants</h2>
+    <p class="note">Hover a year for details. Click to select it. The y-axis starts at zero.</p>
+    <svg id="line" viewBox="0 0 900 300" role="img" aria-label="Line chart of annual registered Filipino emigrants"></svg>
+  </section>
+
+  <section class="card">
+    <div class="head">
+      <h2 id="rankTitle">Destinations ranked</h2>
+      <div class="tabs" id="tabs">
+        <button data-mode="year" class="on">Selected year</button>
+        <button data-mode="all">2001–2022 total</button>
+      </div>
+    </div>
+    <div id="rank"></div>
+    <p class="note">Ten named countries only. "Others" is excluded from the ranking.</p>
+  </section>
+
+  <section class="card">
+    <h2 id="donutTitle">Share by destination</h2>
+    <div class="donutwrap">
+      <svg id="donut" viewBox="0 0 200 200" role="img" aria-label="Donut chart of share by destination"></svg>
+      <ul id="legend"></ul>
+    </div>
+  </section>
+
+  <section class="card wide">
+    <h2>Year-on-year change in total emigrants (%)</h2>
+    <p class="note">Each bar compares a year with the year before it, 2002 to 2022.</p>
+    <svg id="yoy" viewBox="0 0 900 220" role="img" aria-label="Bar chart of year-on-year percentage change"></svg>
+  </section>
+
+  <section class="card wide">
+    <h2>What the data shows</h2>
+    <div class="insights" id="insights"></div>
+    <p class="note" id="quality"></p>
+    <p class="note">These are descriptive charts only. They do not explain causes or predict future numbers.</p>
+  </section>
+</main>
+<div id="tip" role="tooltip"></div>
+<script src="data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
